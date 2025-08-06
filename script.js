@@ -9,8 +9,8 @@ class EmployeeManager {
 
         this.strictEvents()
         this.updateDisplay()
+        console.log(this.employees)
     }
-
     strictEvents() {
         this.form.addEventListener('submit', (event) => {
             event.preventDefault();
@@ -82,4 +82,32 @@ class EmployeeManager {
         this.messageContainer.innerHTML = '';
     }
 
+    clearForm() {
+        document.getElementById('name').value = ''
+        document.getElementById('profession').value = ''
+        document.getElementById('age').value = ''
+    }
+
+    updateDisplay() {
+        this.employeeCount.textContent = `You have ${this.employees.length} Employee${this.employees.length !== 1 ? 's' : ''}.`;
+
+        if (this.employees.length === 0) {
+            this.employeeList.innerHTML = '<p>No employees added yet.</p>';
+            return;
+        }
+
+        this.employeeList.innerHTML = this.employees.map((employee, index) => `
+            <div class="employee-item" id="employee-${employee.id}">
+                <div class="employee-info">
+                    <span class="employee-id">${index + 1}</span>
+                    <span class="employee-detail">Name: ${employee.name}</span>
+                    <span class="employee-detail">Profession : ${employee.profession}</span>
+                    <span class="employee-detail">Age : ${employee.age}</span>
+                </div>
+                <button class="btn btn-delete" onClick="employeeManager.deleteEmployee(${employee.id})">Delete User</button>
+            </div>
+        `).join('');
+    }
+
 }
+const employeeManager = new EmployeeManager()

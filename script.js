@@ -70,4 +70,16 @@ class EmployeeManager {
         }, 300)
     }
 
+    showError(message) {
+        this.messageContainer.innerHTML = `<div class="message error-message">${message}</div>`;
+    }
+
+    showSuccess(message) {
+        this.messageContainer.innerHTML = `<div class="message success-message">${message}</div>`;
+    }
+
+    clearMessages() {
+        this.messageContainer.innerHTML = '';
+    }
+
 }

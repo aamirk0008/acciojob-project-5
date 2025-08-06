@@ -7,6 +7,42 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div class="container">
+        <h1 class="header">Employee Management System</h1>
+        
+        <div class="form-container">
+            <h2 class="section-title">New Employees</h2>
+            
+            <form id="employeeForm">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label class="form-label" for="name">Enter Name</label>
+                        <input type="text" id="name" class="form-input" placeholder="Enter Your Name">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="profession">Enter Profession</label>
+                        <input type="text" id="profession" class="form-input" placeholder="Enter Your Profession">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="age">Enter Age</label>
+                        <input type="number" id="age" class="form-input" placeholder="Enter Your Age">
+                    </div>
+                </div>
+                
+                <button type="submit" class="btn">Add User</button>
+            </form>
+
+            <div id="messageContainer"></div>
+
+            <div class="employees-section">
+                <h3 class="section-title">Added Employees</h3>
+                <div class="employee-count" id="employeeCount">You have 0 Employees.</div>
+                <div class="employee-list" id="employeeList"></div>
+            </div>
+        </div>
+    </div>
+
+<!-- Javascript File -->
     <script src="script.js"></script>
 </body>
 </html>

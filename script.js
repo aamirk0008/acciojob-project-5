@@ -30,7 +30,7 @@ class EmployeeManager {
             return;
         }
 
-        if (isNaN(age) || age <= 0) {
+        if (isNaN(age) || parseInt(age) <= 0) {
             this.showError('Error : Age must be a positive number.');
             return;
         }
@@ -69,5 +69,5 @@ class EmployeeManager {
             this.updateDisplay()
         }, 300)
     }
-    
+
 }
